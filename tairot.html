@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html Lang="en">
+    <head>
+        <title>tAIrot</title>
+        <link rel="icon" href="./resources/icons/favicon.png" sizes="any" type="image/png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="responsive.css">
+        <link rel="stylesheet" href="fonts.css">
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    </head>
+    <body>
+        <div id="header"></div>
+        <section id="landing" class="column">
+            <img id="landing-background" src="resources/images/tairot.jpg" alt="">
+            <div class="bottom-align">
+                <h1 class="medium">tAIrot</h1>
+                <div>
+                    <div class="row">
+                        <h5>UX Design, Full Stack Development</h5>
+                        <h5 class="tertiary">Aug 2023</h5>
+                    </div>
+                    <a href="https://tairot.app" target="_blank"><h5 class="primary underline">tairot.app</h5></a>
+                </div>
+            </div>
+        </section>
+        <section id="content">
+            <div class="row gap-12">
+                <span class="column gap-12"></span>
+                <div class="column">
+                    <h5><b>tAIrot</b> is a virtual tarot card reading experience powered by AI.
+                    <br><br>
+                    This project was presented at the Conscious Festival 2023 in collaboration with the Deloitte Center for the Edge.</h5>    
+                </div>
+            </div>
+            <div class="row gap-12">
+                <div class="column media gap-12">
+                    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="480" src="https://embed.figma.com/board/V7QbEx1qU38qe1H3vRyp7J/AI-Powered-Tarot-Card-Readings?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+                </div>
+                <div class="column gap-32">
+                    <h3>Concept</h3>
+                    <p>Virtual tarot card readings have been available in many various formats for some time now; such as online consultations, hard-coded card readings, and YouTube vlogs. The concept of a tarot card reading experienced powered by AI was first discussed as a possible collaboration that I ultimately decided to work on during my own time as a side project.
+                    <br><br>
+                    A simple board was put together to gather my thoughts and ideas for a pitch.</p>
+                    <span></span>
+                    <h3>Design Process</h3>
+                    <p>The virtual experience is designed with a “mobile priority” in mind, as traditional tarot card readings are regarded as intimate and deeply personal methods of introspection, which fits better in the palm of the users, away from prying eyes on a larger screen.
+                    <br><br>
+                    ASCII artwork featured on the tarot cards were done by <a href="https://asyaplugged.in" target="_blank" class="tertiary underline">Asya Davydova Lewis</a>, and used with express permission from the artist.
+                    <br><br>
+                    An "under the hood" feature that was suggested by Asya records the exact millisecond timestamp that the user "pulls" a card and uses that to seed a randomiser that assigns which card from the deck is being revealed. Although not made apparent to the user as a conscious decision, this was done in hopes of creating a stronger connection and meaning in each card that is being revealed to the users.
+                    <br><br>
+                    Alternating between Light & Dark Mode is automatically applied based on the user's browser/system settings.
+                    <br><br>
+                    A Gallery feature was added as part of an update, which allows users to submit their readings anonymously to a public database.  In turn, users can also browse the gallery to understand what questions have been asked by others. This was subsequently expanded upon with a fuzzy Search and Sorting feature, as the number of entries have increased with usage.</p>
+                </div>
+            </div>
+            <div class="row gap-12">
+                <div class="column media">
+                    <img src="resources/images/tairot2.jpg">
+                </div>
+                <div class="column gap-32">
+                    <h3>Final Outcome</h3>
+                    <p>The project was presented at the Conscious Festival in collaboration with the Deloitte Center for the Edge. Based on current usage, there have been more than 10,000 readings completed for users all around the world in various languages.
+                    <br><br>
+                    This web application is live and can be found <a href="https://tairot.app" target="_blank" class="tertiary underline">here</a>.</p>
+                </div>
+            </div>
+            <iframe width="100%" height="720" src="https://www.youtube.com/embed/wqA7GcDstpE?si=tGCgOeI4uRjt3oxt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <marquee>Thanks for visiting <span class="right-32"></span>感谢光临<span class="right-32"></span>Makasih sudah datang<span class="right-32"></span>வருகைக்கு நன்றி</marquee>
+        <div id="footer"></div>
+        <script src="interact.js"></script>
+        <script>
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        </script>
+    </body>
+</html>
