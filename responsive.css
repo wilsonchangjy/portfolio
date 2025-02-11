@@ -49,6 +49,11 @@
     .row {
         display: flex;
         flex-wrap: wrap;
+        gap: 2px 4px;
+    }
+
+    .column.gap-12 {
+        display: none;
     }
 
     .sticker, .right-32, .right-16 {
@@ -79,6 +84,7 @@
 
     h1 {
         font-size: 48px;
+        max-height: fit-content;
     }
 
     h1.medium {
@@ -139,7 +145,7 @@
         padding: 16px;
         width: calc(100% - 32px);
         min-height: calc(100vh - 88px);
-        /* gap: 12px; */
+        gap: 0;
     }
 
     #biography {
@@ -175,6 +181,7 @@
 
     .sticker {
         max-width: 32px;
+        max-height: 32px;
 
         img {
             max-height: 72px;
