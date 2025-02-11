@@ -115,6 +115,10 @@ svg {
     .tertiary {
         color: #AAAAAA;
     }
+
+    svg {
+        color: #AAAAAA;
+    }
 }
 
 .inverse.gradient {

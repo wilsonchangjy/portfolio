@@ -4,6 +4,10 @@
         display: none;
     }
 
+    span.column {
+        display: none;
+    }
+
     iframe {
         height: 480px;
     }
@@ -50,10 +54,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 2px 4px;
-    }
-
-    .column.gap-12 {
-        display: none;
     }
 
     .sticker, .right-32, .right-16 {
@@ -167,7 +167,7 @@
     }
 
     .media {
-        margin-bottom: 20px;
+        margin-bottom: 24px;
     }
 
     .list-item {
