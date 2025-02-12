@@ -84,7 +84,7 @@
 
     h1 {
         font-size: 48px;
-        max-height: fit-content;
+        max-height: 58px;
     }
 
     h1.medium {
@@ -180,8 +180,8 @@
     }
 
     .sticker {
-        max-width: 32px;
-        max-height: 32px;
+        max-width: 48px;
+        max-height: 48px;
 
         img {
             max-height: 72px;
