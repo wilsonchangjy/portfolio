@@ -37,7 +37,7 @@ a:hover, a:active {
 h1 {
     font-size: 92px;
     font-weight: 400;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
     white-space: nowrap;
 }
 
@@ -49,7 +49,7 @@ h1.medium {
 h3 {
     font-size: 56px;
     font-weight: 400;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
 }
 
 h5 {
@@ -68,7 +68,7 @@ marquee {
     border-top: 1px solid #000000;
     font-size: 56px;
     font-weight: 200;
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
 }
 
 p {
