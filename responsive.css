@@ -144,7 +144,7 @@
     #landing {
         padding: 16px;
         width: calc(100% - 32px);
-        min-height: calc(100vh - 88px);
+        height: clamp(724px, calc(100vh - 88px), 899px);
         gap: 0;
     }
 
@@ -156,6 +156,11 @@
 
     #content {
         padding: 0 16px;
+    }
+
+    #link {
+        width: 14px;
+        height: 14px;
     }
 
     .card {
