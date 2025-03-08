@@ -84,11 +84,8 @@
 
     h1 {
         font-size: 48px;
-        max-height: fit-content;
-    }
-
-    h1.medium {
         line-height: 52px;
+        max-height: fit-content;
     }
 
     h3 {
@@ -144,7 +141,7 @@
     #landing {
         padding: 16px;
         width: calc(100% - 32px);
-        height: clamp(724px, calc(100vh - 88px), 899px);
+        height: clamp(724px, calc(100dvh - 88px), 899px);
         gap: 0;
     }
 
