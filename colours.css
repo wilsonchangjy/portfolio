@@ -14,8 +14,8 @@
     --gradient-dark: linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
 
     --background-light: #FFFFFF;
-    --background-dark: #121212;
-    --background-secondary-dark: #1A1A1A;
+    --background-dark: #1A1A1A;
+    --background-secondary-dark: #121212;
 }
 
 .light-mode {
@@ -44,8 +44,4 @@
 
 .gradient.dark-mode {
     background: var(--gradient-dark);
-}
-
-.background {
-    background: light-dark(var(--background-light), var(--background-secondary-dark));
 }

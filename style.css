@@ -10,6 +10,8 @@ html {
 
 body {
     color: light-dark(var(--content-primary-light), var(--content-primary-dark));
+    background-color: light-dark(var(--background-light), var(--background-dark));
+    
     font-family: "Neue Haas Grotesk", sans-serif;
     font-weight: normal;
     font-size: 16px;
@@ -301,7 +303,7 @@ svg {
 
 #logo {    
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 #nav {
@@ -325,7 +327,7 @@ svg {
 
 #footer {
     padding: 64px 24px 128px 24px;
-    background-color: var(--background-dark);
+    background-color: var(--background-secondary-dark);
     color: var(--content-primary-dark);
 
     a {

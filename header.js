@@ -13,7 +13,6 @@ var userPreference = sessionStorage.getItem("wilsonchangjy-preference");
 // Functions
 menu.load("resources/icons/menu.svg");
 close.load("resources/icons/close.svg");
-if (systemPreference) appearance.load("resources/icons/appearance.svg"); else appearance.load("resources/icons/appearance-alt.svg");
 if (window.matchMedia("(max-width: 767px)").matches) initialiseMobile(); else initialiseDesktop();
 
 function initialiseMobile() {
@@ -37,6 +36,7 @@ function initialiseDesktop() {
     menu.hide();
     close.hide();
 
+    if (systemPreference) appearance.load("resources/icons/appearance.svg"); else appearance.load("resources/icons/appearance-alt.svg");
     if (userPreference != null && userPreference != systemPreference) displayAppearance();
 
     appearance.click(toggleAppearance);
@@ -51,7 +51,6 @@ function displayAppearance() {
     let currentPreference;
     if (parseInt(userPreference)) currentPreference = true; else currentPreference = false;
     if (currentPreference) body.addClass("light-mode"), body.removeClass("dark-mode"); else body.addClass("dark-mode"), body.removeClass("light-mode");
-    if (currentPreference != systemPreference) body.addClass("background"); else body.removeClass("background");
 
     const icon = currentPreference ? "resources/icons/appearance.svg" : "resources/icons/appearance-alt.svg";
     appearance.load(icon);
