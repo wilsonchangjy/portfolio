@@ -38,10 +38,10 @@ a:hover, a:active {
 }
 
 h1 {
-    font-size: 92px;
+    font-size: 96px;
     font-weight: 400;
     letter-spacing: -0.02em;
-    line-height: 98px;
+    line-height: 102px;
     white-space: nowrap;
 }
 
@@ -174,7 +174,7 @@ svg {
 .sticker {
     display: flex;
     flex: auto;
-    max-width: 128px;
+    max-width: 256px;
     max-height: 64px;
     align-items: center;
     justify-content: center;
