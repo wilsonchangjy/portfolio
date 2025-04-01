@@ -141,7 +141,7 @@
     #landing {
         padding: 16px;
         width: calc(100% - 32px);
-        height: clamp(640px, calc(100lvh - 88px), 899px);
+        height: clamp(640px, calc(100svh - 88px), 892px);
         gap: 0;
     }
 
