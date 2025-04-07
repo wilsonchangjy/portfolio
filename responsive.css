@@ -83,8 +83,8 @@
     }
 
     h1 {
-        font-size: clamp(48px, 12vw, 64px);
-        line-height: clamp(52px, 14vw, 68px);
+        font-size: clamp(48px, 14vw, 64px);
+        line-height: clamp(52px, 16vw, 68px);
     }
 
     h3 {
@@ -184,7 +184,7 @@
     }
 
     .sticker {
-        max-width: 64px;
+        max-width: 84px;
         max-height: 6vh;
 
         img {
