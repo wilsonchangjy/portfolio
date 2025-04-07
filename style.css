@@ -38,10 +38,11 @@ a:hover, a:active {
 }
 
 h1 {
-    font-size: 96px;
+    font-size: clamp(64px, 8vw, 128px);
+    line-height: clamp(68px, 8vw, 140px);
+
     font-weight: 400;
     letter-spacing: -0.02em;
-    line-height: 102px;
     white-space: nowrap;
 }
 
@@ -174,8 +175,6 @@ svg {
 .sticker {
     display: flex;
     flex: auto;
-    max-width: 192px;
-    max-height: 64px;
     align-items: center;
     justify-content: center;
 
@@ -183,12 +182,16 @@ svg {
         position: relative;
         display: block;
         margin: auto;
-        top: -25%;
 
-        max-height: 128px;
+        max-height: 8vw;
         width: auto;
         z-index: 1;
     }
+}
+
+.spacing {
+    display: flex;
+    flex: auto;
 }
 
 .card {
@@ -272,10 +275,14 @@ svg {
 #landing {
     padding: 24px;
     width: calc(100% - 48px);
-    height: clamp(686px, calc(100dvh - 125px), 992px);
+    height: fit-content;
 
     overflow-x: hidden;
     overflow-y: hidden;
+}
+
+#landing-span {
+    height: calc(100vh - 125px);
 }
 
 #landing-background {

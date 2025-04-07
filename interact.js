@@ -1,5 +1,5 @@
 // Variables
-const projectsArray = shuffleArray(["nostaigia", "tairot", "new-balance", "tumble", "hostile-architecture"]);
+const projectsArray = shuffleArray(["nostaigia", "tairot", "new-balance", "hostile-architecture"]);
 
 // Initialise
 pasteStickers();
@@ -10,6 +10,7 @@ function pasteStickers() {
 
     stickerSlots.forEach(slot => {
         slot.classList.remove("sticker");
+        slot.classList.add("spacing");
         slot.previousElementSibling.classList.add("right-16");
     });
 

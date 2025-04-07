@@ -20,6 +20,8 @@ function initialiseMobile() {
     close.hide();
     appearance.hide();
 
+    $(".spacing").remove();
+
     menu.click(() => {
         toggleHeader([nav, close], [logo, menu]);
         $("#header .grid").css("justify-content", "end");
