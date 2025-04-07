@@ -84,7 +84,7 @@
 
     h1 {
         font-size: clamp(48px, 12vw, 64px);
-        line-height: clamp(52px, 16vw, 68px);
+        line-height: clamp(52px, 14vw, 68px);
     }
 
     h3 {
@@ -144,7 +144,7 @@
     }
 
     #landing-span {
-        height: calc(100vh - 88px);
+        height: calc(100svh - 88px);
     }
 
     #biography {
