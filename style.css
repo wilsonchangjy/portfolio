@@ -38,8 +38,8 @@ a:hover, a:active {
 }
 
 h1 {
-    font-size: clamp(64px, 8vw, 128px);
-    line-height: clamp(68px, 8vw, 140px);
+    font-size: clamp(64px, 7.5vw, 128px);
+    line-height: clamp(68px, 7.8vw, 140px);
 
     font-weight: 400;
     letter-spacing: -0.02em;
