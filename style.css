@@ -183,7 +183,7 @@ svg {
         display: block;
         margin: auto;
 
-        max-height: 8vw;
+        height: min(8vw, 160px);
         width: auto;
         z-index: 1;
     }
