@@ -10,6 +10,9 @@
 
     --content-contrast: #888888;
 
+    --content-disabled-light: #BBBBBB;
+    --content-disabled-dark: #555555;
+
     --gradient-light: linear-gradient(180deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%);
     --gradient-dark: linear-gradient(180deg, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 100%);
 

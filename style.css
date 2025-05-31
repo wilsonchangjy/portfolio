@@ -69,6 +69,7 @@ section {
 }
 
 marquee {
+    padding: 8px 0 4px 0;
     border-top: 1px solid light-dark(var(--content-primary-light), var(--content-primary-dark));
     font-size: 56px;
     font-weight: 200;
@@ -123,6 +124,13 @@ svg {
 .highlight {
     font-size: 24px;
     font-weight: 500;
+}
+
+.disabled {
+    a {
+        color: light-dark(var(--content-disabled-light), var(--content-disabled-dark));
+        pointer-events: none;
+    }
 }
 
 .caption {
@@ -310,7 +318,6 @@ svg {
 
 #logo {    
     font-size: 24px;
-    font-weight: 700;
 }
 
 #nav {
@@ -320,7 +327,6 @@ svg {
     align-items: center;
 
     font-size: 20px;
-    text-transform: uppercase;
 }
 
 #appearance, #menu, #close {
@@ -333,9 +339,12 @@ svg {
 }
 
 #footer {
-    padding: 64px 24px 128px 24px;
-    background-color: var(--background-secondary-dark);
-    color: var(--content-primary-dark);
+    .grid {
+        width: calc(100% - 48px);
+        padding: 64px 24px 128px 24px;
+        background-color: var(--background-secondary-dark);
+        color: var(--content-primary-dark);
+    };
 
     a {
         color: var(--content-primary-dark);

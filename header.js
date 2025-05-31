@@ -14,6 +14,7 @@ var userPreference = sessionStorage.getItem("wilsonchangjy-preference");
 menu.load("resources/icons/menu.svg");
 close.load("resources/icons/close.svg");
 if (window.matchMedia("(max-width: 767px)").matches) initialiseMobile(); else initialiseDesktop();
+if (window.location.href.includes("about.html")) nav.children(":first").addClass("disabled");
 
 function initialiseMobile() {
     nav.hide();
