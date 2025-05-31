@@ -98,7 +98,7 @@
     }
 
     marquee {
-        padding-top: 6px;
+        padding: 6px 0 0 0;
         font-size: 24px;
     }
 
