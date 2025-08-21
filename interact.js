@@ -1,5 +1,5 @@
 // Variables
-const projectsArray = shuffleArray(["nostaigia", "tairot", "new-balance", "hostile-architecture"]);
+const projectsArray = shuffleArray(["okx-growth","nostaigia", "tairot", "new-balance", "hostile-architecture"]);
 
 // Initialise
 pasteStickers();
