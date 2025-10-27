@@ -1,1 +1,6 @@
 hello wilson this is asya
+
+i was wondering if you could put the tairot.app website on github?
+so i can work directly in there and make PRs without making you do the task yourself.
+thank you!
+<3
