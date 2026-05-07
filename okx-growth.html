@@ -13,64 +13,89 @@
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body>
-        <div id="header" class="light-mode"></div>
-        <section id="landing" class="column light-mode">
+        <div id="header"></div>
+        <section id="landing" class="light-mode">
             <div id="landing-span"></div>
             <img id="landing-background" src="resources/images/okxgrowth.jpg">
             <div class="bottom-align primary">
                 <h1 class="medium">OKX Growth Suite</h1>
                 <div class="row">
-                    <h5>UI & UX Design</h5>
+                    <h5>Product Design</h5>
+                    <h5 class="secondary">Jan 2024 — Present</h5>
                 </div>
             </div>
         </section>
-        <section id="content">
-            <div class="row gap-12">
-                <span class="column gap-12"></span>
-                <div class="column gap-32">
-                    <h5>Focused on products that drive user growth and engagement, my contributions include establishing new avenues of online traffic, optimising core engagement flows, pioneering 0-to-1 initiatives in collaboration with other product teams, as well as building internal tools for managing reward, gift and campaign systems.</h5>
+        <div class="row gap-12">
+            <ul id="table-of-contents" class="column remove-bullet medium"></ul>
+            <section id="content" class="column">
+                <div id="overview" class="column gap-32" data-toc="Overview">
+                    <h5>Contributing to the Growth team, the primary directive was to create engagement with the crypto-curious and empower them through understanding to take their first step towards the future of money, while providing confidence and trust through consistency and transparency.</h5>
                     <h5 class="secondary">Further details withheld due to prevailing non-disclosures, please request for a private discussion.</h5>
                 </div>
-            </div>
-            <div class="row gap-12">
-                <span class="column"></span>
-                <div class="column gap-32">
-                    <h3>User Engagement</h3>
-                    <img src="/resources/images/okxgrowth2.jpg">
+                <div id="campaigns" class="column gap-32" data-toc="Campaigns">
+                    <h3>Campaigns</h3>
+                    <video src="resources/videos/okxgrowth-campaigns.mp4" poster="resources/images/okxgrowth-campaigns-poster.jpg" autoplay loop muted></video>
+                    <div class="row gap-12 data-points">
+                        <div class="column">
+                            <h4>20B+ USDT</h4>
+                            <h5 class="secondary">Trading Volume</h5>
+                        </div>
+                        <div class="column">
+                            <h4>480K+</h4>
+                            <h5 class="secondary">Participating Users</h5>
+                        </div>
+                    </div>
                     <p>
-                        Contributed on projects that set out to create engagement with the crypto-curious and empower them through understanding to take their first step towards the future of money, while providing confidence and trust through consistency and transparency.
+                        Spearheaded the redesign of Campaign pages through rebuilding modules and introducing gamification, resulting in a 270% increase of trading volume at 20+ Billion USDT, for flagship campaigns such as the annual World Trading Championship.
                         <br><br>
-                        Produced a consistent growth in Share activity according to the number of monthly active users, resulting in an increase of new user sign ups via referrals across H1 2025.
+                        Built a multi-phase month-long Chinese New Year campaign emphasising hyper-social mechanics and outreach, amassing a total of 480K+ participating users, and resulting in an acquisition of 77.7K+ new users. Generated 3.8M+ views on social media platforms such as Douyin.
                     </p>
                 </div>
-            </div>
-            <div class="row gap-12">
-                <span class="column"></span>
-                <div class="column gap-32">
+                <div id="organic-traffic" class="column gap-32" data-toc="Organic Traffic">
                     <h3>Organic Traffic</h3>
+                    <img src="resources/images/okxgrowth2.jpg">
+                    <div class="row gap-12 data-points">
+                        <div class="column">
+                            <h4>22.6%</h4>
+                            <h5 class="secondary">Increase in Engagement Rate</h5>
+                        </div>
+                        <div class="column">
+                            <h4>#1</h4>
+                            <h5 class="secondary">Google SERP Ranking</h5>
+                        </div>
+                    </div>
                     <p>
-                        Increased the average engagement rate of the Price page, and grew new user acquisition through revamping designs to become scalable and configurable while ensuring content provided to users is relevant and valuable.
+                        Increased the average engagement rate of the Price page by 22.6%, and grew new user acquisition by 24% through revamping designs to become scalable and configurable while ensuring content provided to users is relevant and valuable.
                         <br><br>
-                        Established a components and patterns library in collaboration with the front-end team to quickly configure and build pages based on trending search intents to capture organic traffic.
+                        Compounded the market share for Price pages of trending tokens by 14x and subsequently ranked #1 on Google search results, by establishing keywords and features that correspond most to users' search intents and continuous optimisation through research and data analysis.
                     </p>
                 </div>
-            </div>
-            <div class="row gap-12">
-                <span class="column"></span>
-                <div class="column gap-32">
-                    <h3>Internal Tools</h3>
+                <div id="user-engagement" class="column gap-32" data-toc="User Engagement">
+                    <h3>User Engagement</h3>
+                    <img src="resources/images/okxgrowth3.jpg">
+                    <div class="row gap-12 data-points">
+                        <div class="column">
+                            <h4>56%</h4>
+                            <h5 class="secondary">Increase in Share activity</h5>
+                        </div>
+                        <div class="column">
+                            <h4>10.5K+</h4>
+                            <h5 class="secondary">Sign ups via Share</h5>
+                        </div>
+                    </div>
                     <p>
-                        Established a new system to support affiliates and business developers in sending and distributing gifts to their community as part of their user acquisition campaigns and growth activities.
+                        Increased the rate of users completing a Share by 56%, by overhauling and redesigning legacy components which made data visualisation simplified, clean and less complex.
                         <br><br>
-                        Revamped and optimised legacy systems to improve usability and produce a scalable point of reference for future expansion.
+                        Produced a consistent growth of 30% in Share activity according to the number of monthly active users, resulting in a total of 10,500+ new user sign ups via referrals across H1 2025.
                     </p>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
         <div id="footer"></div>
         <script>
             $("#header").load("header.html");
             $("#footer").load("footer.html");
         </script>
+        <script src="table-of-contents.js"></script>
     </body>
 </html>

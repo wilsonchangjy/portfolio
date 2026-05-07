@@ -13,8 +13,8 @@
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body>
-        <div id="header" class="gradient light-mode"></div>
-        <section id="landing" class="column light-mode">
+        <div id="header"></div>
+        <section id="landing" class="light-mode">
             <div id="landing-span"></div>
             <img id="landing-background" src="resources/images/hostilearchitecture.jpg">
             <div class="bottom-align primary">
@@ -25,83 +25,61 @@
                 </div>
             </div>
         </section>
-        <section id="content">
-            <div class="row gap-12">
-                <span class="column gap-12"></span>
-                <div class="column">
-                    <h5><em class="medium">The Average Singaporean's Guide to Hostile Architecture</em> is a visual project depicted as a guidebook on the socio-political issue of hostile architecture within the context of Singapore. Project collaterals includes a comprehensive publication featuring extensive and meticulously curated text and images, a series of conceptual photographs, and a soft guerilla marketing campaign.</h5>    
+        <div class="row">
+            <ul id="table-of-contents" class="column remove-bullet medium"></ul>
+            <section id="content" class="column">
+                <div id="overview" class="column gap-32" data-toc="Overview">
+                    <h5>
+                        <em class="medium">The Average Singaporean's Guide to Hostile Architecture</em> is a visual project depicted as a guidebook on the socio-political issue of hostile architecture within the context of Singapore. Project collaterals includes a comprehensive publication featuring extensive and meticulously curated text and images, a series of conceptual photographs, and a soft guerrilla marketing campaign.
+                    </h5>
                 </div>
-            </div>
-            <div class="row gap-12">
-                <div class="column media gap-12">
-                    <img src="resources/images/hostilearchitecture-research.jpg">
-                </div>
-                <div class="column gap-32">
+                <div id="concept" class="column gap-32" data-toc="Research">
                     <h3>Research</h3>
                     <p class="highlight">Surveys</p>
-                    <p>
-                        To form a brief idea of the Singaporean public's perception and understanding on the issue of hostile architecture, we first established and disseminated a survey without a specific target group in mind, as this is meant to provide a sketch of the general consensus.
-                        <br><br>
-                        A total of 94 responses were recorded for this survey which included quantitative and qualitative data points that were further analysed and affinity mapped into key insights regarding the public's understanding of hostile architecture within the local context. Some of these include:
-                    </p>
+                    <p>To form a brief idea of the Singaporean public's perception and understanding on the issue of hostile architecture, we first established and disseminated a survey without a specific target group in mind, as this is meant to provide a sketch of the general consensus.</p>
+                    <p>A total of 94 responses were recorded for this survey which included quantitative and qualitative data points that were further analysed and affinity mapped into key insights regarding the public's understanding of hostile architecture within the local context. Some of these include:</p>
                     <ul>
                         <li>Only 43% of respondents have heard of or come across the term “hostile architecture”</li>
                         <li>Just 21 out of the 94 respondents were aware of the different purposes of hostile architecture</li>
                         <li>Most of the respondents misinterpreted the purpose of bench handles, and when prompted, 73% of them agreed or strongly agreed that there is no need for such implementations to deter the homeless</li>
                     </ul>
                     <p class="highlight">Interviews with experts</p>
-                    <p>
-                        To further bolster our understanding on the topic from preliminary research conducted through literary sources, we've reached out and gotten in contact with several experts who have had prior work in relation to the issue of hostile architecture.
-                        <br><br>
-                        These experts range from a wide variety of professional backgrounds; from journalists and politicians to architects and professors, and as such, provided a wealth of insights on the matter which granted a much deeper understanding of the core issues at hand as well as how it affects the society in the bigger picture.
-                    </p>                  
+                    <p>To further bolster our understanding on the topic from preliminary research conducted through literary sources, we've reached out and gotten in contact with several experts who have had prior work in relation to the issue of hostile architecture.</p>
+                    <p>These experts range from a wide variety of professional backgrounds; from journalists and politicians to architects and professors, and as such, provided a wealth of insights on the matter which granted a much deeper understanding of the core issues at hand as well as how it affects the society in the bigger picture.</p>
+                    <img src="resources/images/hostilearchitecture-research.jpg">                 
                     <p class="highlight">Field research</p>
-                    <p>
-                        It was important that our project received first-hand documentation of the examples of hostile architecture found in Singapore.
-                        <br><br>
-                        We first scoured the internet, looking for existing images or footage of such features embedded in our living space, as well as any information regarding the exact address of said object. Several full-day excursions were spent travelling around the island city in search of these features, to be documented in its intended environment as well as how others would interact with them.
-                    </p>
+                    <p>It was important that our project received first-hand documentation of the examples of hostile architecture found in Singapore.</p>
+                    <p>We first scoured the internet, looking for existing images or footage of such features embedded in our living space, as well as any information regarding the exact address of said object. Several full-day excursions were spent travelling around the island city in search of these features, to be documented in its intended environment as well as how others would interact with them.</p>
                 </div>
-            </div>
-            <div class="row gap-12">
-                <span class="column"></span>
-                <div class="column gap-32">
+                <div id="design-process" class="column gap-32"  data-toc="Design Process">
                     <h3>Design Process</h3>
-                    <p>
-                        Druk serves as the highlight typeface, reserved for titles and points of emphasis. As for the body copywriting, a pairing of Neue Haas Unica W1G and Proxima Nova was conceived to provide a reading experience that feels industrial and geometric but with added details of a humanist approach, reflecting the themes within the content.
-                        <br><br>
-                        Throughout the field research documentation process, the idea for a conceptual photographic series began development and was shot on location with a minimal lighting set up. The character featured within these stills represents the everyday Singaporean, interacting with the environment. These photographs serve as accompanying imagery for the various chapters of the publication.
-                    </p>
+                    <p>Druk serves as the highlight typeface, reserved for titles and points of emphasis. As for the body copywriting, a pairing of Neue Haas Unica W1G and Proxima Nova was conceived to provide a reading experience that feels industrial and geometric but with added details of a humanist approach, reflecting the themes within the content.</p>
+                    <p>Throughout the field research documentation process, the idea for a conceptual photographic series began development and was shot on location with a minimal lighting set up. The character featured within these stills represents the everyday Singaporean, interacting with the environment. These photographs serve as accompanying imagery for the various chapters of the publication.</p>
                 </div>
-            </div>
-            <div class="row gap-12">
-                <div class="column media">
+                <div id="final-outcome" class="column gap-32" data-toc="Final Outcome">
+                    <h3>Final Outcome</h3>
+                    <p>The principal product of this project is a 74-page publication containing a curated collection of literary content regarding discussions and articles on the issue of hostile architecture in Singapore, as well as excerpts from the interviews conducted with experts, with their permission granted.</p>
+                    <p>The content is categorised into 3 main chapters; the Unhomed, the Hampered and the Community. Each chapter is accompanied by photographs documenting the relevant structures and features that affect the respective group.</p>
+                    <p>This project was showcased at the School of Art, Design & Media's End of Semester show for Visual Communications.</p>
                     <img src="resources/images/hostilearchitecture2.jpg">
                 </div>
-                <div class="column gap-32">
-                    <h3>Final Outcome</h3>
-                        <p>
-                        The principal product of this project is a 74-page publication containing a curated collection of literary content regarding discussions and articles on the issue of hostile architecture in Singapore, as well as excerpts from the interviews conducted with experts, with their permission granted.
-                        <br><br>
-                        The content is categorised into 3 main chapters; the Unhomed, the Hampered and the Community. Each chapter is accompanied by photographs documenting the relevant structures and features that affect the respective group.
-                        </p>
-                </div>
-            </div>
-            <div class="column gap-12">
-                <img src="resources/images/hostilearchitecture3.jpg">
-                <img src="resources/images/hostilearchitecture4.jpg">
-                <img src="resources/images/hostilearchitecture5.jpg" class="bottom-32">
-                <span class="bottom-8"></span>
-                <img src="resources/images/hostilearchitecture-conceptual.jpg">
-                <img src="resources/images/hostilearchitecture-conceptual2.jpg">
-                <img src="resources/images/hostilearchitecture-conceptual3.jpg">
-                <img src="resources/images/hostilearchitecture-conceptual4.jpg">
-            </div>
+            </section>
+        </div>
+        <section id="gallery">
+            <img src="resources/images/hostilearchitecture3.jpg">
+            <img src="resources/images/hostilearchitecture4.jpg">
+            <img src="resources/images/hostilearchitecture5.jpg" class="bottom-32">
+            <span class="bottom-8"></span>
+            <img src="resources/images/hostilearchitecture-conceptual.jpg">
+            <img src="resources/images/hostilearchitecture-conceptual2.jpg">
+            <img src="resources/images/hostilearchitecture-conceptual3.jpg">
+            <img src="resources/images/hostilearchitecture-conceptual4.jpg">
         </section>
         <div id="footer"></div>
         <script>
             $("#header").load("header.html");
             $("#footer").load("footer.html");
         </script>
+        <script src="table-of-contents.js"></script>
     </body>
 </html>

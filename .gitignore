@@ -3,3 +3,7 @@
 /resources/icons/.DS_Store
 /resources/images/.DS_Store
 /resources/neuehaasgrotesk/.DS_Store
+
+# MemPalace per-project files (issue #185)
+mempalace.yaml
+entities.json

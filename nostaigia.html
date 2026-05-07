@@ -13,72 +13,71 @@
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body>
-        <div id="header" class="gradient dark-mode"></div>
-        <section id="landing" class="column dark-mode">
+        <div id="header"></div>
+        <section id="landing" class="dark-mode">
             <div id="landing-span"></div>
             <img id="landing-background" src="resources/images/nostaigia.jpg">
             <div class="bottom-align primary">
                 <h1 class="medium">Liminal Landscapes: nostAIgia</h1>
                 <div class="row">
-                    <h5 class="">Full Stack Development</h5>
+                    <h5>Interaction Design &amp; Development</h5>
                     <h5 class="secondary">April 2024</h5>
                 </div>
             </div>
         </section>
-        <section id="content">
-            <div class="row gap-12">
-                <span class="column gap-12"></span>
-                <div class="column">
+        <div class="row">
+            <ul id="table-of-contents" class="column remove-bullet medium"></ul>
+            <section id="content" class="column">
+                <div id="overview" class="column gap-32" data-toc="Overview">
                     <h5>
-                        <em class="medium">nostAIgia</em> is an interactive installation that presents viewers with the experience of viewing a curated slideshow of photographs from Gibson-Hill’s collection, alongside a computer vision model which detects and names subjects within the image.
+                        <em class="medium">nostAIgia</em> is an interactive installation that presents viewers with the experience of viewing a curated slideshow of photographs from Gibson-Hill&rsquo;s collection, alongside a computer vision model which detects and names subjects within the image.
                         <br><br>
-                        This project was exhibited at the Arts House in Singapore and ART SPACE in Busan, as part of Liminal Landscapes, which relives the street photographic work of C.A. Gibson-Hill depicting life in Singapore and Malaya in the 1940s-60s.
+                        This project was exhibited as part of Liminal Landscapes, which relives the street photographic work of C.A. Gibson-Hill depicting life in Singapore and Malaya in the 1940s-60s.
                     </h5>
                 </div>
-            </div>
-            <div class="row gap-12">
-                <span class="column"></span>
-                <div class="column gap-32">
+                <div id="concept" class="column gap-32" data-toc="Concept">
                     <h3>Concept</h3>
                     <p>
                         Conceived as a thought-social experiment, nostAIgia utilises artificial intelligence and machine learning, along with crowd-sourced data from viewers to retrain and calibrate its custom image-detection capabilities. This results in a model that adapts according to every interaction recorded, for better or worse, establishing a neoteric co-creative experience of reliving the photographic work of Gibson-Hill.
                         <br><br>
                         This experience presents viewers with the role of an observer and supervisor, as they are allowed to stop the slideshow at any given image and create, edit or delete subject tags. The contributed data will be collated periodically and used as training data for the next iteration of the computer vision model.
                         <br><br>
-                        As a result, the model has started to pick up on local colloquialism such as “sampan” and identifying objects that look different due to the time period compared to the modern equivalent we (as well as the computer vision model) would be familiar with these days, such as a bowl or a car.
-                        </p>
-                </div>
-            </div>
-            <div class="row gap-12">
-                <span class="column"></span>
-                <div class="column gap-32">
-                    <h3>Technical Considerations</h3>
-                    <p>The project runs as a web application, which allows data to be written from the various exhibition locations and sent to the cloud. The YOLOv8 model is used for detecting and segmenting subjects within the image, and is continuously trained on Google Colab which is synced to the Google Drive that houses data collected from interactions with viewers.</p>
-                </div>
-            </div>
-            <div class="row gap-12">
-                <div class="column media">
-                    <img src="resources/images/nostaigia2.jpg">
-                </div>
-                <div class="column gap-32">
-                    <h3>Final Outcome</h3>
-                    <p>
-                        Commissioned by Prof. Oh Soon-Hwa, this project is part of Liminal Landscapes which features works that reimagine Gibson-Hill’s photographs in the context of today via the application of various modern technologies.
-                        <br><br>
-                        Liminal Landscapes exhibited in Singapore and Busan, South Korea from March to May 2024.
+                        As a result, the model has started to pick up on local colloquialism such as &ldquo;sampan&rdquo; and identifying objects that look different due to the time period compared to the modern equivalent we (as well as the computer vision model) would be familiar with these days, such as a bowl or a car.
                     </p>
                 </div>
-            </div>
-            <div class="column gap-12">
-                <img src="resources/images/nostaigia3.jpg">
-                <img src="resources/images/nostaigia4.jpg">
-                <iframe width="100%" height="720" src="https://www.youtube.com/embed/kN9J7Q5rqjA?si=iq7PJDPHrynCQxmL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+                <div id="technical-considerations" class="column gap-32" data-toc="Technical Considerations">
+                    <h3>Technical Considerations</h3>
+                    <p>The entire project consisted of two main technical components that had to be designed and developed:</p>
+                    <ul>
+                        <li>The interactive installation, which served as the front-end allowing visitors to input data.</li>
+                        <li>The machine learning framework, which required collecting data from the installation and fine-tuning the modified model.</li>
+                    </ul>
+                    <p>The project runs as a web application, which allows data to be written from the various exhibition locations and sent to the cloud. The YOLOv8 model is used for detecting and segmenting subjects within the image, and is continuously trained on Google Colab which is synced to the Google Drive that houses data collected from interactions with viewers.</p>
+                </div>
+                <div id="exhibition" class="column gap-32" data-toc="Exhibition">
+                    <h3>Exhibition</h3>
+                    <p>Commissioned by Prof. Oh Soon-Hwa, this project is part of Liminal Landscapes which features works that reimagine Gibson-Hill&rsquo;s photographs in the context of today via the application of various modern technologies.</p>
+                    <p>Liminal Landscapes exhibited in Singapore and Busan, South Korea from March to May 2024:</p>
+                    <ul>
+                        <li>Selegie Arts Centre, Singapore</li>
+                        <li>The Arts House at The Old Parliament, Singapore</li>
+                        <li>ART SPACE, Busan</li>
+                    </ul>
+                    <p>Throughout the duration of the exhibition, data collected from visitors interacting with the installation was saved on Google Drive, and then manually sorted and supervised before using them to train the custom YOLOv8 model over time. As a result of this, the model picked up on local colloquialisms and identified new subjects that the base model was not able to label.</p>
+                    <img src="resources/images/nostaigia2.jpg">
+                    <img src="resources/images/nostaigia3.jpg">
+                    <img src="resources/images/nostaigia4.jpg">
+                </div>
+            </section>
+        </div>
+        <section id="gallery">
+            <iframe width="100%" height="720" src="https://www.youtube.com/embed/kN9J7Q5rqjA?si=iq7PJDPHrynCQxmL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
         <div id="footer"></div>
         <script>
             $("#header").load("header.html");
             $("#footer").load("footer.html");
         </script>
+        <script src="table-of-contents.js"></script>
     </body>
 </html>

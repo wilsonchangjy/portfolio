@@ -13,63 +13,73 @@
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
     <body>
-        <div id="header" class="light-mode"></div>
-        <section id="landing" class="column light-mode">
+        <div id="header"></div>
+        <section id="landing" class="light-mode">
             <div id="landing-span"></div>
             <img id="landing-background" src="resources/images/tairot.jpg">
             <div class="bottom-align primary">
                 <h1 class="medium">tAIrot</h1>
                 <div>
                     <div class="row">
-                        <h5>Interaction Design, Full Stack Development</h5>
+                        <h5>Interaction Design &amp; Development</h5>
                         <h5 class="secondary">Aug 2023</h5>
                     </div>
-                    <a href="https://tairot.app" target="_blank" class="row center-align"><h5 class="primary underline">tairot.app</h5><img src="/resources/icons/link.svg" id="link"></a>
+                    <a href="https://tairot.app" target="_blank" class="row center-align"><h5 class="primary underline">tairot.app</h5><img src="resources/icons/link.svg" id="link"></a>
                 </div>
             </div>
         </section>
-        <section id="content">
-            <div class="row gap-12">
-                <span class="column gap-12"></span>
-                <div class="column">
-                    <h5><em class="medium">tAIrot</em> is a virtual tarot card reading experience powered by AI.
-                    <br><br>
-                    This project was presented at the Conscious Festival 2023 in collaboration with the Deloitte Center for the Edge.</h5>    
+        <div class="row">
+            <ul id="table-of-contents" class="column remove-bullet medium"></ul>
+            <section id="content" class="column">
+                <div id="overview" class="column gap-32" data-toc="Overview">
+                    <h5>
+                        <em class="medium">tAIrot</em> is a virtual tarot card reading experience powered by AI. ASCII artwork featured on the tarot cards were done by <a href="https://asyaplugged.in" target="_blank" class="underline">Asya Davydova Lewis</a>, and used with express permission from the artist.
+                        <br><br>
+                        This project was presented at the Conscious Festival 2023 in collaboration with the Deloitte Center for the Edge.
+                    </h5>
                 </div>
-            </div>
-            <div class="row gap-12">
-                <div class="column media gap-12">
+                <div id="concept" class="column gap-32" data-toc="Concept">
+                    <h3>Concept</h3>
+                    <p>Virtual tarot card readings have been available in many various forms for some time now, such as online consultations, hard-coded card readings, and YouTube vlogs. The concept of a tarot card reading experienced powered by AI was first discussed as a possible collaboration that I ultimately decided to work on during my own time as a side project.</p>
+                    <img src="resources/images/tairot3.png">
+                </div>
+                <div id="research" class="column gap-32" data-toc="Research">
+                    <h3>Research</h3>
+                    <p>While a familiar with divination and spiritual nuances, I was definitely more interested in exploring the technological aspect of incorporating artificial intelligence and the ancient art of tarot card reading. This was an exercise in crafting an experience that reshapes our understanding of the intricate dance between the tangible and intangible, the logical and mystical.</p>
+                    <p>Some initial questions that the design process was framed around to get started were:</p>
+                    <ul>
+                        <li>Why are users interested in divination?</li>
+                        <li>What information are users expecting to receive in a reading?</li>
+                        <li>How are users hoping to feel after a reading?</li>
+                    </ul>
+                    <p>These questions paved the way for helping me understand what emotions this virtual experience could evoke, and how the sequence of information and interactions presented could be structured.</p>
                     <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="480" src="https://embed.figma.com/board/V7QbEx1qU38qe1H3vRyp7J/AI-Powered-Tarot-Card-Readings?node-id=0-1&embed-host=share" allowfullscreen></iframe>
                 </div>
-                <div class="column gap-32">
-                    <h3>Concept</h3>
-                    <p>Virtual tarot card readings have been available in many various formats for some time now; such as online consultations, hard-coded card readings, and YouTube vlogs. The concept of a tarot card reading experienced powered by AI was first discussed as a possible collaboration that I ultimately decided to work on during my own time as a side project.
-                    <br><br>
-                    A simple board was put together to gather my thoughts and ideas for a pitch.</p>
-                    <span></span>
+                <div id="design-process" class="column gap-32" data-toc="Design Process">
                     <h3>Design Process</h3>
-                    <p>The virtual experience is designed with a “mobile priority” in mind, as traditional tarot card readings are regarded as intimate and deeply personal methods of introspection, which fits better in the palm of the users, away from prying eyes on a larger screen.
-                    <br><br>
-                    ASCII artwork featured on the tarot cards were done by <a href="https://asyaplugged.in" target="_blank" class="secondary underline">Asya Davydova Lewis</a>, and used with express permission from the artist.
-                    <br><br>
-                    An "under the hood" feature that was suggested by Asya records the exact millisecond timestamp that the user "pulls" a card and uses that to seed a randomiser that assigns which card from the deck is being revealed. Although not made apparent to the user as a conscious decision, this was done in hopes of creating a stronger connection and meaning in each card that is being revealed to the users.
-                    <br><br>
-                    Alternating between Light & Dark mode is automatically applied based on the user's browser/system settings.
-                    <br><br>
-                    A Gallery feature was added as part of an update, which allows users to submit their readings anonymously to a public database.  In turn, users can also browse the gallery to peek at questions that have been asked by others. This was subsequently expanded upon with a fuzzy Search and Sorting feature, as the number of entries have increased with usage.</p>
+                    <p>As someone who has never really gotten involved with the practice of tarot cards, it was important for me to understand and respect this interaction and exchange between a tarot reader and the client. In most basic forms of reading, a set of three cards will be used to form the outlook of a particular topic.</p>
+                    <p>From my research, there are two main variables that affect it's meaning such as:</p>
+                    <ul>
+                        <li>Orientation of the card when pulled and revealed; upwards or reversed?</li>
+                        <li>Sequence of the card being pulled; is it the first, second or last card being revealed?</li>
+                    </ul>
+                    <p>Also, it was common for the reader and client to ask follow up questions as each card is being revealed, to further understand the context of the query, or clarify a specific meaning.</p>
+                    <p>Beyond recreating as faithfully and respectfully possible of a virtual experience, a new layer of interaction allows users to view readings done by previous users submitted to the Gallery. As the submissions are anonymous, it provides a unique voyeuristic circumstance of being able to look at what others have on their mind, creating a blind relational aesthetic connection towards other users.</p>
                 </div>
-            </div>
-            <div class="row gap-12">
-                <div class="column media">
-                    <img src="resources/images/tairot2.jpg">
+                <div id="exhibition" class="column gap-32" data-toc="Exhibition">
+                    <h3>Exhibition</h3>
+                    <p>The project was presented at the Conscious Festival in collaboration with the Deloitte Center for the Edge. Based on current usage, there have been more than 15,000 readings for users all around the world in various languages.</p>
+                    <p>This web application is live and can be found <a href="https://tairot.app" target="_blank" class="secondary underline">here</a>.</p>
+                    <p>Throughout the festival, we&rsquo;ve also polled the audience on how much they agree to the following statements after trying out the virtual experience:</p>
+                    <ul>
+                        <li>&ldquo;I trust AI to predict my future&rdquo; (1.8/5)</li>
+                        <li>&ldquo;I have a different perception of AI&rdquo; (2.7/5)</li>
+                        <li>&ldquo;I think powerful AI tools should be widely accessible&rdquo; (3.5/5)</li>
+                    </ul>
                 </div>
-                <div class="column gap-32">
-                    <h3>Final Outcome</h3>
-                    <p>The project was presented at the Conscious Festival in collaboration with the Deloitte Center for the Edge. Based on current usage, there have been more than 10,000 readings completed for users all around the world in various languages.
-                    <br><br>
-                    This web application is live and can be found <a href="https://tairot.app" target="_blank" class="secondary underline">here</a>.</p>
-                </div>
-            </div>
+            </section>
+        </div>
+        <section id="gallery">
             <iframe width="100%" height="720" src="https://www.youtube.com/embed/wqA7GcDstpE?si=tGCgOeI4uRjt3oxt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
         <div id="footer"></div>
@@ -77,5 +87,6 @@
             $("#header").load("header.html");
             $("#footer").load("footer.html");
         </script>
+        <script src="table-of-contents.js"></script>
     </body>
 </html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html Lang="en">
+    <head>
+        <title>Gone, but not forgotten ;)</title>
+        <link rel="icon" href="resources/icons/favicon.png" sizes="any" type="image/png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="responsive.css">
+        <link rel="stylesheet" href="fonts.css">
+        <link rel="stylesheet" href="colours.css">
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+        <style>
+            #landing {
+                position: relative;
+                box-sizing: border-box;
+                min-height: 100vh;
+                padding: 24px;
+                width: 100%;
+            }
+
+            #text-stage {
+                position: relative;
+                pointer-events: none;
+            }
+
+            #text-stage .line {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: 0;
+                font-size: clamp(64px, 7.5vw, 128px);
+                line-height: clamp(68px, 7.8vw, 140px);
+                font-weight: 400;
+                letter-spacing: -0.02em;
+                text-align: justify;
+                text-align-last: justify;
+                pointer-events: auto;
+                user-select: text;
+            }
+
+            #sticker-layer {
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+                z-index: 10;
+            }
+
+            #sticker-layer .sticker {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                flex: none;
+                align-items: unset;
+                justify-content: unset;
+                max-width: none;
+                max-height: min(8vw, 144px);
+                width: auto;
+                height: auto;
+                cursor: grab;
+                pointer-events: auto;
+                user-select: none;
+                -webkit-user-drag: none;
+                will-change: transform;
+                touch-action: none;
+            }
+
+            #sticker-layer .sticker.dragging { cursor: grabbing; }
+
+            @media (max-width: 767px) {
+                #sticker-layer .sticker {
+                    max-height: 16vw;
+                }
+            }
+
+            #wrap-probe {
+                position: absolute;
+                visibility: hidden;
+                pointer-events: none;
+                top: -9999px;
+                left: -9999px;
+                font-size: clamp(64px, 7.5vw, 128px);
+                line-height: clamp(68px, 7.8vw, 140px);
+                font-weight: 400;
+                letter-spacing: -0.02em;
+                font-family: "Neue Haas Grotesk", sans-serif;
+                white-space: pre;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="landing">
+            <div id="text-stage"></div>
+            <div id="sticker-layer">
+                <img class="sticker" src="resources/images/okxgrowth-sticker.png" alt="">
+                <img class="sticker" src="resources/images/nostaigia-sticker.png" alt="">
+                <img class="sticker" src="resources/images/tairot-sticker.png" alt="">
+                <img class="sticker" src="resources/images/newbalance-sticker.png" alt="">
+                <img class="sticker" src="resources/images/hostilearchitecture-sticker.png" alt="">
+            </div>
+            <span id="wrap-probe">M</span>
+        </section>
+        <div id="footer"></div>
+        <script type="module" src="stickers.js"></script>
+    </body>
+</html>

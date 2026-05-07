@@ -6,33 +6,27 @@ const menu = $("#menu");
 const close = $("#close");
 const body = $('body');
 
-const menuItems = [logo, nav, menu, close];
 const systemPreference = window.matchMedia('(prefers-color-scheme: light)').matches;
 var userPreference = sessionStorage.getItem("wilsonchangjy-preference");
 
-// Functions
-menu.load("resources/icons/menu.svg");
-close.load("resources/icons/close.svg");
-if (window.matchMedia("(max-width: 767px)").matches) initialiseMobile(); else initialiseDesktop();
-if (window.location.href.includes("about.html")) nav.children(":first").addClass("disabled");
+// Functions 
+if (window.matchMedia("(max-width: 1023px)").matches) initialiseMobile(); else initialiseDesktop();
+
+const currentPath = window.location.pathname;
+
+if (currentPath.endsWith("about.html")) nav.find("a[href='about.html']").parent().addClass("disabled");
+else if (currentPath.endsWith("index.html") || currentPath.endsWith("/")) nav.find("a[href='index.html']").parent().addClass("disabled");
+
+document.documentElement.style.setProperty('--header-height', $('#header').innerHeight() + 'px');
 
 function initialiseMobile() {
-    nav.hide();
     close.hide();
     appearance.hide();
 
-    $(".spacing").remove();
+    menu.click(openMenu);
+    close.click(closeMenu);
 
-    menu.click(() => {
-        toggleHeader([nav, close], [logo, menu]);
-        $("#header .grid").css("justify-content", "end");
-        $("#header .grid").css("gap", "24px");
-    });
-    close.click(() => { 
-        toggleHeader([logo, menu], [nav, close]);
-        $("#header .grid").css("justify-content", "space-between");
-        $("#header .grid").css("gap", "12px");
-    });
+    nav.find("a").click(closeMenu);
 }
 
 function initialiseDesktop() {
@@ -45,9 +39,16 @@ function initialiseDesktop() {
     appearance.click(toggleAppearance);
 }
 
-function toggleHeader(fadeItems, hideItems) {
-    fadeItems.forEach((element) => element.fadeIn(250));
-    hideItems.forEach((element) => element.hide());
+function openMenu() {
+    menu.hide();
+    close.fadeIn(150);
+    body.addClass("menu-open");
+}
+
+function closeMenu() {
+    close.hide();
+    menu.fadeIn(150);
+    body.removeClass("menu-open");
 }
 
 function displayAppearance() {
@@ -60,7 +61,7 @@ function displayAppearance() {
 }
 
 function toggleAppearance() {
-    if (userPreference == null) userPreference = systemPreference ? 0 : 1; 
+    if (userPreference == null) userPreference = systemPreference ? 0 : 1;
     else userPreference = 1 - userPreference;
 
     sessionStorage.setItem("wilsonchangjy-preference", userPreference ? 1 : 0);

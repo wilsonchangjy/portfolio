@@ -38,10 +38,10 @@ a:hover, a:active {
 }
 
 h1 {
-    font-size: clamp(64px, 7.5vw, 128px);
-    line-height: clamp(68px, 7.8vw, 140px);
+    font-size: 92px;
+    line-height: 96px;
 
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: -0.02em;
     white-space: nowrap;
 }
@@ -54,6 +54,11 @@ h3 {
     font-size: 56px;
     font-weight: 400;
     letter-spacing: -0.02em;
+}
+
+h4 {
+    font-size: 40px;
+    font-weight: 400;
 }
 
 h5 {
@@ -70,7 +75,8 @@ section {
 
 marquee {
     padding: 8px 0 4px 0;
-    border-top: 1px solid light-dark(var(--content-primary-light), var(--content-primary-dark));
+    border-top: 1px solid light-dark(var(--border-contrast-light), var(--border-contrast-dark));
+    color: var(--content-primary-dark);
     font-size: 56px;
     font-weight: 200;
     letter-spacing: -0.02em;
@@ -90,7 +96,7 @@ ul {
     margin-left: 22px;
 }
 
-img {
+img, video {
     width: 100%;
     object-fit: cover;
 }
@@ -113,10 +119,6 @@ svg {
     font-weight: 500;
 }
 
-.uppercase {
-    text-transform: uppercase;
-}
-
 .underline {
     text-decoration: underline;
 }
@@ -137,11 +139,6 @@ svg {
     color: light-dark(var(--content-secondary-light), var(--content-secondary-dark));
     font-size: 20px;
     font-weight: 400;
-}
-
-.wrap {
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .grid {
@@ -180,28 +177,6 @@ svg {
     bottom: 24px;
 }
 
-.sticker {
-    display: flex;
-    flex: auto;
-    align-items: center;
-    justify-content: center;
-
-    img {
-        position: relative;
-        display: block;
-        margin: auto;
-
-        max-height: min(8vw, 144px);
-        width: auto;
-        z-index: 1;
-    }
-}
-
-.spacing {
-    display: flex;
-    flex: auto;
-}
-
 .card {
     height: fit-content;
 
@@ -212,7 +187,7 @@ svg {
 
 .list-item {
     padding: 24px 0;
-    border-bottom: 1px solid light-dark(var(--content-primary-light), var(--content-primary-dark));
+    border-bottom: 1px solid light-dark(var(--border-contrast-light), var(--border-contrast-dark));
 
     div {
         grid-column-start: span 3;
@@ -222,21 +197,6 @@ svg {
 .remove-bullet {
     list-style-type: none;
     margin-left: 0;
-}
-
-.media {
-    position: sticky;
-    margin-top: 99px;
-    top: 24px;
-    height: fit-content;
-
-    img {
-        height: auto;
-    }
-}
-
-.gap-8 {
-    gap: 8px
 }
 
 .gap-12 {
@@ -255,10 +215,6 @@ svg {
     margin-bottom: 8px;
 }
 
-.bottom-12 {
-    margin-bottom: 12px;
-}
-
 .bottom-24 {
     margin-bottom: 24px;
 }
@@ -271,18 +227,15 @@ svg {
     margin-right: 32px;
 }
 
-.right-16 {
-    margin-right: 16px;
-}
-
 .border-top {
-    border-top: 1px solid light-dark(var(--content-primary-light), var(--content-primary-dark));
+    border-top: 1px solid light-dark(var(--border-contrast-light), var(--border-contrast-dark));
 }
 
 /* ID */
 #landing {
     padding: 24px;
     width: calc(100% - 48px);
+    max-width: none;
     height: fit-content;
 
     overflow-x: hidden;
@@ -290,30 +243,91 @@ svg {
 }
 
 #landing-span {
-    height: calc(100vh - 125px);
+    height: calc(100vh - var(--header-height) - 48px);
 }
 
 #landing-background {
     position: absolute;
-    top: 0;
+    top: var(--header-height);
     left: 0;
 
-    height: 100%;
+    width: 100%;
+    height: calc(100% - var(--header-height));
 
     z-index: -1;
 }
 
-#content {
-    margin-top: 64px;
-    margin-bottom: 96px;
-    padding: 0 24px;
+#landing-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0;
+}
+
+#landing-background video.active {
+    opacity: 1;
+}
+
+#hello-world {
+    position: absolute;
+    top: calc(50% - 56px);
+    /* left: 24px; */
     display: flex;
     flex-direction: column;
-    gap: 64px;
+}
+
+#intro {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+
+#content {
+    margin: 96px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 96px;
+    padding: 0 24px;
+}
+
+#content:has(#overview) {
+    padding-left: 0;
+}
+
+#gallery {
+    margin: 0 24px 96px 24px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#table-of-contents {
+    position: sticky;
+    top: calc(var(--header-height) + 24px);
+    align-self: start;
+    height: fit-content;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 24px;
+
+    margin: 96px 0;
+    padding-left: 24px;
+}
+
+#table-of-contents a.active {
+    color: light-dark(var(--content-primary-light), var(--content-primary-dark));
 }
 
 #header {
-    padding: 24px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    padding: 20px 24px;
+    background-color: light-dark(var(--background-light), var(--background-dark));
 }
 
 #logo {    
@@ -329,8 +343,14 @@ svg {
     font-size: 20px;
 }
 
+#nav li:first-child {
+    display: none;
+}
+
 #appearance, #menu, #close {
     height: 20px;
+    display: flex;
+    align-items: center;
 }
 
 #link {
@@ -339,10 +359,12 @@ svg {
 }
 
 #footer {
+    background-color: var(--background-dark);
+
     .grid {
         width: calc(100% - 48px);
-        padding: 64px 24px 128px 24px;
-        background-color: var(--background-secondary-dark);
+        padding: 64px 24px 64px 24px;
+        background-color: var(--background-dark);
         color: var(--content-primary-dark);
     };
 
@@ -359,9 +381,21 @@ svg {
     margin-top: 12px;
 
     font-size: 14px;
+    font-weight: 500;
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+#wordmark {
+    padding: 0 24px 0 24px;
+
+    font-size: calc((100vw - 60px) / 7.14);
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #biography {
