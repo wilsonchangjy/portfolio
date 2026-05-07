@@ -264,7 +264,7 @@
     }
 
     #landing-span {
-        height: calc(100dvh - var(--header-height) - 32px);
+        height: calc(100svh - var(--header-height) - 32px);
     }
 
     #biography {
