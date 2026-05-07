@@ -243,7 +243,7 @@ svg {
 }
 
 #landing-span {
-    height: calc(100vh - var(--header-height) - 48px);
+    height: calc(100dvh - var(--header-height) - 48px);
 }
 
 #landing-background {
@@ -252,7 +252,7 @@ svg {
     left: 0;
 
     width: 100%;
-    height: calc(100% - var(--header-height));
+    height: calc(100dvh - var(--header-height));
 
     z-index: -1;
 }
@@ -328,6 +328,13 @@ svg {
     z-index: 99;
     padding: 20px 24px;
     background-color: light-dark(var(--background-light), var(--background-dark));
+
+    /* iOS Safari: stop tap-highlight rectangles, text selection, and long-press
+       callouts from briefly painting over #logo when adjacent buttons are tapped. */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 #logo {    
