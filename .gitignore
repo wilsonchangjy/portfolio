@@ -6,4 +6,7 @@
 
 # MemPalace per-project files (issue #185)
 mempalace.yaml
-entities.json.claude/
+entities.json
+
+# Claude Code worktrees (contain .git files that get treated as gitlinks)
+.claude/
