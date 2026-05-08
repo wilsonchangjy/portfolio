@@ -174,7 +174,7 @@ svg {
 
 .bottom-align {
     position: absolute;
-    bottom: 24px;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 24px);
 }
 
 .card {
@@ -233,6 +233,8 @@ svg {
 
 /* ID */
 #landing {
+    position: relative;
+
     padding: 24px;
     width: calc(100% - 48px);
     max-width: none;
@@ -248,11 +250,11 @@ svg {
 
 #landing-background {
     position: absolute;
-    top: var(--header-height);
+    top: 0;
     left: 0;
 
     width: 100%;
-    height: calc(100lvh - var(--header-height));
+    height: 100%;
 
     z-index: -1;
 }
