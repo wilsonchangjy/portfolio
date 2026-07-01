@@ -156,6 +156,12 @@
         flex-shrink: 0;
     }
 
+    #gallery-plane {
+        --block-w: 1200px;
+        --base-h: 200px;
+        --gap: 64px;
+    }
+
     #content:has(#overview) {
         padding-left: 24px;
     }   
@@ -202,6 +208,7 @@
 
     h3 {
         font-size: 40px;
+        line-height: 42px;
     }
 
     h4 {
@@ -287,6 +294,12 @@
         margin: 0 0 64px 0;
         padding: 0 16px;
         gap: 8px;
+    }
+
+    #gallery-plane {
+        --block-w: 720px;
+        --base-h: 150px;
+        --gap: 48px;
     }
 
     #table-of-contents {
