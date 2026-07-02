@@ -36,7 +36,21 @@ let startX = 0, startY = 0, originX = 0, originY = 0;
 let lastX = 0, lastY = 0, lastTime = 0;
 let shuffledOrder = null; // fixed image order for the session (shuffled once)
 let rafId = null;
-const aspectMap = {}; // filename -> natural width/height, populated by preloadImages()
+
+// Hardcoded aspect ratios (width / height) so the gallery lays out instantly —
+// no waiting for images to decode. Add an entry when adding a new image; any
+// filename missing here falls back to 1.5.
+const ASPECTS = {
+    "okxgrowth.jpg": 1.5, "okxgrowth2.jpg": 1.333, "okxgrowth3.jpg": 1.778,
+    "okxgrowth-campaigns-poster.jpg": 1.778, "okxgrowth-poster.jpg": 1.778,
+    "nostaigia.jpg": 1.6, "nostaigia2.jpg": 1.333, "nostaigia3.jpg": 1.776, "nostaigia4.jpg": 1.776,
+    "tairot.jpg": 1.429, "tairot2.jpg": 1.521, "tairot3.png": 2.495,
+    "hostilearchitecture.jpg": 1.503, "hostilearchitecture2.jpg": 1.503, "hostilearchitecture3.jpg": 1.503,
+    "hostilearchitecture4.jpg": 1.503, "hostilearchitecture5.jpg": 1.504,
+    "hostilearchitecture-conceptual.jpg": 1.5, "hostilearchitecture-conceptual2.jpg": 1.5,
+    "hostilearchitecture-conceptual3.jpg": 1.5, "hostilearchitecture-conceptual4.jpg": 1.5,
+    "hostilearchitecture-research.jpg": 1.778,
+};
 
 // Functions
 function projectFor(filename) {
@@ -51,18 +65,6 @@ function shuffle(array) {
     return array;
 }
 
-// Decode every image up front so natural dimensions are known before layout
-// (masonry column heights depend on each image's aspect ratio).
-function preloadImages() {
-    return Promise.all(IMAGES.map(filename => {
-        const img = new Image();
-        img.src = `resources/images/${filename}`;
-        return img.decode()
-            .then(() => { aspectMap[filename] = img.naturalWidth / img.naturalHeight; })
-            .catch(() => { aspectMap[filename] = 1.5; });
-    }));
-}
-
 // Build a justified-rows block (Flickr/Google-Photos style): images keep their
 // natural aspect ratio, grouped into rows that are each scaled to fill the block
 // width exactly. Every block is a clean rectangle of width --block-w, so the
@@ -72,7 +74,7 @@ function buildBlock() {
     const H0 = parseFloat(getComputedStyle(plane).getPropertyValue("--base-h")) || 240;
     const G = parseFloat(getComputedStyle(plane).getPropertyValue("--gap")) || 96;
     const N = shuffledOrder.length;
-    const aspectOf = f => aspectMap[f] || 1.5;
+    const aspectOf = f => ASPECTS[f] || 1.5;
 
     // Group images into rows; a row closes once its natural width (at H0) fills W.
     const rows = [];
@@ -110,7 +112,7 @@ function buildBlock() {
             tile.draggable = false;
             tile.style.width = `${h * aspectOf(f)}px`; // image renders at height h
             tile.innerHTML =
-                `<img src="resources/images/${f}" alt="${project.title}" draggable="false">` +
+                `<img src="resources/images/${f}" alt="${project.title}" style="aspect-ratio: ${aspectOf(f)}" draggable="false" decoding="async" onload="this.classList.add('loaded')">` +
                 `<h5 class="primary">${project.title}</h5>`;
             rowEl.appendChild(tile);
         });
@@ -239,9 +241,8 @@ function onClickCapture(e) {
     }
 }
 
-async function init() {
+function init() {
     shuffledOrder = shuffle([...IMAGES]);
-    await preloadImages();
     layout();
 
     offsetX = Math.random() * periodX; // randomise the initial window
@@ -256,6 +257,7 @@ async function init() {
     stage.addEventListener("pointerup", onPointerUp);
     stage.addEventListener("pointercancel", onPointerUp);
     stage.addEventListener("click", onClickCapture, true);
+    stage.addEventListener("dragstart", e => e.preventDefault()); // kill native image/link drag ghost
 
     window.addEventListener("load", layout);
     window.addEventListener("resize", layout);
