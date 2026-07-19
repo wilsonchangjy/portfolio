@@ -1,5 +1,5 @@
 // Variables
-const landingClips = shuffleArray([{"video": "okxgrowth", "image": "okxgrowth-poster"}, {"video": "nostaigia", "image": "nostaigia4"}, {"video": "hostilearchitecture", "image": "hostilearchitecture-conceptual3"}]);
+const landingClips = shuffleArray([{"video": "okxgrowth", "image": "okxgrowth-poster"}, {"video": "nostaigia", "image": "nostaigia4"}, {"video": "hostilearchitecture", "image": "hostilearchitecture-conceptual3"}, {"video": "tairot", "image": "tairot"}]);
 const landingVideos = document.querySelectorAll("#landing-background video");
 
 let landingClipIndex = 0;
@@ -7,6 +7,7 @@ let landingActive = 0;
 
 // Initialise
 if (landingVideos.length === 2 && landingClips.length) initialiseLanding();
+initialiseFilters();
 
 // Functions
 function initialiseLanding() {
@@ -42,6 +43,23 @@ function setLandingClip(video, clip) {
     video.dataset.clip = clip;
     video.poster = `resources/images/${clip.image}.jpg`;
     video.src = `resources/videos/${clip.video}.mp4`;
+}
+
+function initialiseFilters() {
+    const filters = document.getElementById("filters");
+    if (!filters) return;
+
+    const cards = document.querySelectorAll("#work .card");
+    filters.addEventListener("click", function (e) {
+        const selected = e.target.closest(".filter");
+        if (!selected) return;
+
+        const filter = selected.dataset.filter;
+        filters.querySelectorAll(".filter").forEach(f => f.classList.remove("active"));
+        selected.classList.add("active");
+
+        cards.forEach(card => card.classList.toggle("hide", filter !== "all" && card.dataset.category !== filter));
+    });
 }
 
 function shuffleArray(array) {

@@ -319,6 +319,10 @@
         font-size: calc((100vw - 32px) / 3.58);
     }
 
+    #filters{
+        margin-bottom: 4px;
+    }   
+
     .card {
         img {
             height: 200px;

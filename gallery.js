@@ -1,12 +1,12 @@
 // Project registry — image filenames are bound to a project by prefix.
 // To add a tile: drop the image in resources/images/ and append its filename
-// to IMAGES below. Its destination/title/description are derived from the
+// to IMAGES below. Its destination/title are derived from the
 // matching prefix here. To omit an image, simply leave it out of IMAGES.
 const PROJECTS = [
-    { prefix: "okxgrowth",          url: "okx-growth.html",           title: "OKX Growth Suite",                                          description: "Product Design" },
-    { prefix: "nostaigia",          url: "nostaigia.html",            title: "Liminal Landscapes: nostAIgia",                             description: "Interaction Design & Development" },
-    { prefix: "tairot",             url: "tairot.html",               title: "tAIrot",                                                    description: "Interaction Design & Development" },
-    { prefix: "hostilearchitecture", url: "hostile-architecture.html", title: "The Average Singaporean's Guide to Hostile Architecture",   description: "Visual Design, Photography" },
+    { prefix: "okxgrowth",          url: "okx-growth.html",           title: "OKX Growth Suite"},
+    { prefix: "nostaigia",          url: "nostaigia.html",            title: "Liminal Landscapes: nostAIgia"},
+    { prefix: "tairot",             url: "tairot.html",               title: "tAIrot"},
+    { prefix: "hostilearchitecture", url: "hostile-architecture.html", title: "The Average Singaporean's Guide to Hostile Architecture"},
 ];
 
 // Work images only (stickers, placeholder, preview and profile omitted).
@@ -113,7 +113,7 @@ function buildBlock() {
             tile.style.width = `${h * aspectOf(f)}px`; // image renders at height h
             tile.innerHTML =
                 `<img src="resources/images/${f}" alt="${project.title}" style="aspect-ratio: ${aspectOf(f)}" draggable="false" decoding="async" onload="this.classList.add('loaded')">` +
-                `<h5 class="primary">${project.title}</h5>`;
+                `<p class="caption primary">${project.title}</p>`;
             rowEl.appendChild(tile);
         });
         block.appendChild(rowEl);

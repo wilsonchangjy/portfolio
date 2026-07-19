@@ -6,11 +6,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <meta http-equiv="X-UA-Compatible">
-        <meta property="description" content="Wilson Chang is a product designer, UX engineer and occasional creative technologist whose work is centred around bridging human-computer interactions."/>
+        <meta property="description" content="Wilson Chang is a product designer and occasional creative technologist whose work is centred around bridging human-computer interactions."/>
         <meta property="og:image" content="https://wilsonchangjy.com/resources/images/preview.jpg"> 
         <meta property="og:site_name" content="Wilson C">
         <meta property="og:title" content="Wilson C">
-        <meta property="og:description" content="Wilson Chang is a product designer, UX engineer and occasional creative technologist whose work is centred around bridging human-computer interactions." />
+        <meta property="og:description" content="Wilson Chang is a product designer and occasional creative technologist whose work is centred around bridging human-computer interactions." />
         <meta property="og:url" content="https://wilsonchangjy.com">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="responsive.css">
@@ -34,7 +34,7 @@
         <section id="content">
             <div class="grid">
                 <div id="intro">
-                    <h4 class="bottom-32">a Product Designer, UX Engineer and occasional Creative Technologist based in Singapore.</h4>
+                    <h4 class="bottom-32">a Product Designer and occasional Creative Technologist based in Singapore.</h4>
                     <a href="about.html">
                         <h5><u>About me</u></h5>
                     </a>
@@ -43,28 +43,32 @@
             <div id="work">
                 <div class="row between end-align bottom-32">
                     <h3>Work</h3>
-                    <a href="gallery.html" class="row center-align"><h5 class="underline">View gallery</h5></a>
+                    <div id="filters" class="row">
+                        <h5 class="filter active" data-filter="all">All</h5>
+                        <h5 class="filter" data-filter="design">Design</h5>
+                        <h5 class="filter" data-filter="technology">Technology</h5>
+                    </div>
                 </div>
                 <div class="grid">
-                    <a href="okx-growth.html" class="card">
+                    <a href="okx-growth.html" class="card" data-category="design">
                         <img src="resources/images/okxgrowth.jpg" class="bottom-8">
                         <h5 class="primary bottom-4">OKX Growth Suite</h5>
-                        <p class="caption">Product Design</p>
+                        <p class="caption">Empowering the crypto-curious by building trust and confidence</p>
                     </a>
-                    <a href="nostaigia.html" class="card">
+                    <a href="nostaigia.html" class="card" data-category="technology">
                         <img src="resources/images/nostaigia.jpg" class="bottom-8">
                         <h5 class="primary bottom-4">Liminal Landscapes: nostAIgia</h5>
-                        <p class="caption">Interaction Design & Development</p>
+                        <p class="caption">Exploring new ways of experiencing archival photographs with AI</p>
                     </a>
-                    <a href="tairot.html" class="card">
+                    <a href="tairot.html" class="card" data-category="technology">
                         <img src="resources/images/tairot.jpg" class="bottom-8">
                         <h5 class="primary bottom-4">tAIrot</h5>
-                        <p class="caption">Interaction Design & Development</p>
+                        <p class="caption">Designing &amp; building an interactive tarot experience powered by AI</p>
                     </a>
-                    <a href="hostile-architecture.html" class="card">
+                    <a href="hostile-architecture.html" class="card" data-category="design">
                         <img src="resources/images/hostilearchitecture.jpg" class="bottom-8">
                         <h5 class="primary bottom-4">The Average Singaporean's Guide to Hostile Architecture</h5>
-                        <p class="caption">Visual Design, Photography</p>
+                        <p class="caption">Visualising &amp; personifying research</p>
                     </a>
                 </div>
             </div>
@@ -96,7 +100,7 @@
             </div>
         </section>
         <div id="footer"></div>
-        <script src="landing.js"></script>
+        <script src="index.js"></script>
         <script>
             $("#header").load("header.html");
             $("#footer").load("footer.html");
