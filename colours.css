@@ -13,8 +13,8 @@
     --content-disabled-light: #BBBBBB;
     --content-disabled-dark: #555555;
 
-    --border-contrast-light: #000000;
-    --border-contrast-dark: #FFFFFF;
+    --border-contrast-light: #666666;
+    --border-contrast-dark: #AAAAAA;
 
     --gradient-light: linear-gradient(180deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%);
     --gradient-dark: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.125) 50%, rgba(0, 0, 0, 0) 100%);
