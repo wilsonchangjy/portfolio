@@ -177,10 +177,6 @@
         gap: 2px 4px;
     }
 
-    .right-32 {
-        display: inline;
-    }
-
     .card {
         img {
             height: 360px;
@@ -223,9 +219,14 @@
         height: 240px;
     }
 
-    marquee {
+    .marquee {
         padding: 6px 0 0 0;
         font-size: 24px;
+    }
+
+    .marquee-track {
+        gap: 16px;
+        animation-duration: 30s;
     }
 
     #header {
@@ -354,10 +355,6 @@
 
     .bottom-32 {
         margin-bottom: 24px;
-    }
-
-    .right-32 {
-        margin-right: 16px;
     }
 
     .gap-32 {

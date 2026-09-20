@@ -85,15 +85,6 @@ section {
     margin-right: auto;
 }
 
-marquee {
-    padding: 8px 0 4px 0;
-    border-top: 1px solid light-dark(var(--border-contrast-light), var(--border-contrast-dark));
-    color: var(--content-primary-dark);
-    font-size: 56px;
-    font-weight: 200;
-    letter-spacing: -0.02em;
-}
-
 p {
     a:hover, a:active {
         color: light-dark(var(--content-primary-light), var(--content-primary-dark));
@@ -224,6 +215,30 @@ svg {
     }
 }
 
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+
+    img {
+        display: block;
+    }
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    video.active {
+        opacity: 1;
+    }
+}
+
 .list-item {
     padding: 24px 0;
     border-bottom: 1px solid light-dark(var(--border-contrast-light), var(--border-contrast-dark));
@@ -266,12 +281,97 @@ svg {
     margin-bottom: 32px;
 }
 
-.right-32 {
-    margin-right: 32px;
-}
-
 .border-top {
     border-top: 1px solid light-dark(var(--border-contrast-light), var(--border-contrast-dark));
+}
+
+
+.gallery-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.gallery-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--gap);
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 0 0 auto;
+
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.gallery-tile img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    background-color: light-dark(#ececec, #242424);
+    background-image: linear-gradient(90deg, transparent 40%, light-dark(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.07)) 50%, transparent 60%);
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    animation: gallery-shimmer 1.5s ease-in-out infinite;
+
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+.gallery-tile img.loaded {
+    background: none;
+    animation: none;
+}
+
+@keyframes gallery-shimmer {
+    from { background-position: 150% 0; }
+    to { background-position: -150% 0; }
+}
+
+.gallery-tile h5 {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.marquee {
+    padding: 8px 0 4px 0;
+    border-top: 1px solid light-dark(var(--border-contrast-light), var(--border-contrast-dark));
+    color: var(--content-primary-dark);
+    font-size: 56px;
+    font-weight: 200;
+    letter-spacing: -0.02em;
+
+    overflow: hidden;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 32px;
+    width: max-content;
+    white-space: nowrap;
+
+    will-change: transform;
+    animation: marquee-scroll 45s linear infinite;
+}
+
+@keyframes marquee-scroll {
+    from { transform: translateX(100vw); }
+    to { transform: translateX(-100%); }
 }
 
 /* ID */
@@ -332,11 +432,6 @@ svg {
     box-sizing: border-box;
     margin-top: 96px;
     margin-bottom: 96px;
-    /* horizontal margin intentionally left to inherit:
-       - on home/about (#content is a <section>): auto-centers via the global
-         `section { margin-left: auto; margin-right: auto }` rule at >1728px.
-       - on project pages (#content is a <div> inside <section class="row">):
-         no horizontal margin, flex layout positions it correctly. */
     display: flex;
     flex-direction: column;
     gap: 96px;
@@ -360,7 +455,6 @@ svg {
     padding: 0 24px;
 }
 
-/* Gallery page (gallery.html) — draggable, infinitely-wrapping project grid */
 #gallery-stage {
     position: fixed;
     top: var(--header-height, 0px);
@@ -371,6 +465,8 @@ svg {
     overflow: hidden;
     cursor: grab;
     touch-action: none;
+
+    max-width: none;
 
     background-color: light-dark(var(--background-light), var(--background-dark));
 }
@@ -388,70 +484,6 @@ svg {
     --block-w: 2200px;
     --base-h: 260px;
     --gap: 96px;
-}
-
-.gallery-block {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap);
-}
-
-.gallery-row {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: var(--gap);
-    width: 100%;
-    overflow: hidden;
-}
-
-.gallery-tile {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex: 0 0 auto;
-
-    user-select: none;
-    -webkit-user-select: none;
-}
-
-.gallery-tile img {
-    display: block;
-    width: 100%;
-    height: auto;
-
-    /* animated skeleton shown (in the reserved aspect-ratio box) until the image loads */
-    background-color: light-dark(#ececec, #242424);
-    background-image: linear-gradient(90deg, transparent 40%, light-dark(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.07)) 50%, transparent 60%);
-    background-size: 200% 100%;
-    background-repeat: no-repeat;
-    animation: gallery-shimmer 1.5s ease-in-out infinite;
-
-    pointer-events: none;
-    -webkit-user-drag: none;
-}
-
-/* once the image has painted, drop the skeleton so the animation stops repainting */
-.gallery-tile img.loaded {
-    background: none;
-    animation: none;
-}
-
-@keyframes gallery-shimmer {
-    from { background-position: 150% 0; }
-    to { background-position: -150% 0; }
-}
-
-.gallery-tile h5 {
-    display: -webkit-box;
-    line-clamp: 2;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 #table-of-contents {
@@ -481,15 +513,11 @@ svg {
     padding: 20px 24px;
     background-color: light-dark(var(--background-light), var(--background-dark));
 
-    /* iOS Safari: stop tap-highlight rectangles, text selection, and long-press
-       callouts from briefly painting over #logo when adjacent buttons are tapped. */
     -webkit-touch-callout: none;
     user-select: none;
     -webkit-user-select: none;
 }
 
-/* iOS Safari: kill tap-highlight on every tappable element in the header.
-   Scoped to descendants directly — inheritance of this property is unreliable. */
 #header,
 #header *,
 #header a,
@@ -500,8 +528,6 @@ svg {
 }
 
 #logo {
-    /* Promote to its own GPU layer so the opacity fade composites cleanly
-       without leaving subpixel residue mid-transition. */
     will-change: opacity;
     transform: translateZ(0);
 }
@@ -534,10 +560,6 @@ svg {
     width: 18px;
     height: 18px;
 
-    /* Masked rather than an <img>: an <img> renders the SVG in an isolated
-       document where `currentColor` can't reach it. As a mask the icon is
-       painted with currentColor, so it inherits the text colour and follows
-       light/dark automatically. */
     background-color: currentColor;
     -webkit-mask: url(resources/icons/link.svg) no-repeat center / contain;
     mask: url(resources/icons/link.svg) no-repeat center / contain;
@@ -591,8 +613,4 @@ svg {
         grid-column-start: span 2;
         width: 100%;
     }
-}
-
-#filters{
-    margin-bottom: 8px;
 }
