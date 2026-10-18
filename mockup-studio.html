@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html Lang="en">
+    <head>
+        <title>Mockup Studio</title>
+        <link rel="icon" href="resources/icons/favicon.png" sizes="any" type="image/png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta http-equiv="X-UA-Compatible">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="responsive.css">
+        <link rel="stylesheet" href="fonts.css">
+        <link rel="stylesheet" href="colours.css">
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    </head>
+    <body>
+        <div id="header"></div>
+        <section id="landing">
+            <div id="landing-span"></div>
+            <img id="landing-background" src="resources/images/mockupstudio.png">
+            <div class="bottom-align primary light-mode">
+                <h1 class="medium">Mockup Studio</h1>
+                <div>
+                    <div class="row">
+                        <h5>AI-assisted Design &amp; Development</h5>
+                        <h5 class="secondary">Oct 2026</h5>
+                    </div>
+                    <a href="https://mockupstudio.dev" target="_blank" class="row center-align"><h5 class="primary underline">mockupstudio.dev</h5><i class="link primary"></i></a>
+                </div>
+            </div>
+        </section>
+        <section class="row">
+            <ul id="table-of-contents" class="column remove-bullet medium"></ul>
+            <div id="content" class="column">
+                <div id="overview" class="column gap-32" data-toc="Overview">
+                    <h5><em class="medium">Mockup Studio</em> is a lightweight platform that allows designers to compose mockup devices in a 3D scene and export them as images or videos within the browser itself.</h5>
+                </div>
+                <div id="concept" class="column gap-32" data-toc="Concept">
+                    <h3>Concept</h3>
+                    <p>As a designer, having clean and beautiful looking mockups makes all the difference in showcasing your product. Most of these are gated behind paywalls or watermarked during export, inspiring me to build my own platform for future projects. This took form as a 3D environment where users can add devices, move and pose them as they wish, and export both images and videos for free with no limits.</p>
+                </div>
+                <div id="technical-considerations" class="column gap-32" data-toc="Technical Considerations">
+                    <h3>Technical Considerations</h3>
+                    <div>
+                        <p>Some key features of Mockup Studio include:</p>
+                        <ul>
+                            <li>built with three.js, and accompanying add-ons such as HDR loader, gizmo, and camera controls</li>
+                            <li>Static Web Application: no data leaves the user&rsquo;s browser or gets uploaded to a server, ensuring privacy and confidentiality</li>
+                            <li>22 devices and counting: free 3D models taken from Sketchfab of various devices such as phones, tablets, laptops, and more are available for use</li>
+                        </ul>
+                    </div>
+                    <p>This web application is live and can be found <a href="https://mockupstudio.dev" target="_blank" class="secondary underline">here</a>.</p>
+                    <img src="resources/images/mockupstudio2.png">
+                </div>
+            </div>
+        </section>
+        <div id="footer"></div>
+        <script>
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        </script>
+        <script src="table-of-contents.js"></script>
+    </body>
+</html>

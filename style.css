@@ -446,6 +446,10 @@ svg {
     padding-left: 0;
 }
 
+#content:has(#filters) {
+    margin-top: 48px;
+}
+
 #work {
     scroll-margin-top: var(--header-height);
 }

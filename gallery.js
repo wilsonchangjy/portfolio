@@ -4,6 +4,7 @@
 // matching prefix here. To omit an image, simply leave it out of IMAGES.
 const PROJECTS = [
     { prefix: "okxgrowth",          url: "okx-growth.html",           title: "OKX Growth Suite"},
+    { prefix: "mockupstudio",       url: "mockup-studio.html",        title: "Mockup Studio"},
     { prefix: "nostaigia",          url: "nostaigia.html",            title: "Liminal Landscapes: nostAIgia"},
     { prefix: "tairot",             url: "tairot.html",               title: "tAIrot"},
     { prefix: "hostilearchitecture", url: "hostile-architecture.html", title: "The Average Singaporean's Guide to Hostile Architecture"},
@@ -12,6 +13,7 @@ const PROJECTS = [
 // Work images only (stickers, placeholder, preview and profile omitted).
 const IMAGES = [
     "okxgrowth.jpg", "okxgrowth2.jpg", "okxgrowth3.jpg", "okxgrowth-campaigns-poster.jpg", "okxgrowth-poster.jpg",
+    "mockupstudio.png", "mockupstudio2.png",
     "nostaigia.jpg", "nostaigia2.jpg", "nostaigia3.jpg", "nostaigia4.jpg",
     "tairot.jpg", "tairot2.jpg", "tairot3.png",
     "hostilearchitecture.jpg", "hostilearchitecture2.jpg", "hostilearchitecture3.jpg", "hostilearchitecture4.jpg", "hostilearchitecture5.jpg",
@@ -43,6 +45,7 @@ let rafId = null;
 const ASPECTS = {
     "okxgrowth.jpg": 1.5, "okxgrowth2.jpg": 1.333, "okxgrowth3.jpg": 1.778,
     "okxgrowth-campaigns-poster.jpg": 1.778, "okxgrowth-poster.jpg": 1.778,
+    "mockupstudio.png": 1.777, "mockupstudio2.png": 1.594,
     "nostaigia.jpg": 1.6, "nostaigia2.jpg": 1.333, "nostaigia3.jpg": 1.776, "nostaigia4.jpg": 1.776,
     "tairot.jpg": 1.429, "tairot2.jpg": 1.521, "tairot3.png": 2.495,
     "hostilearchitecture.jpg": 1.503, "hostilearchitecture2.jpg": 1.503, "hostilearchitecture3.jpg": 1.503,
