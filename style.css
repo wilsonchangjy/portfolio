@@ -497,6 +497,7 @@ svg {
 #table-of-contents {
     position: sticky;
     top: calc(var(--header-height) + 24px);
+    z-index: 1; /* above .link icons, whose mask makes them paint as their own layer */
     align-self: start;
     height: fit-content;
     
