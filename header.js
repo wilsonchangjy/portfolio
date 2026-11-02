@@ -12,12 +12,8 @@ var userPreference = sessionStorage.getItem("wilsonchangjy-preference");
 // Functions 
 if (window.matchMedia("(max-width: 1023px)").matches) initialiseMobile(); else initialiseDesktop();
 
-const currentPath = window.location.pathname;
-
-if (currentPath.endsWith("about.html")) nav.find("a[href='about.html']").parent().addClass("disabled");
-else if (currentPath.endsWith("work.html")) nav.find("a[href='work.html']").parent().addClass("disabled");
-else if (currentPath.endsWith("gallery.html")) nav.find("a[href='gallery.html']").parent().addClass("disabled");
-else if (currentPath.endsWith("index.html") || currentPath.endsWith("/")) nav.find("a[href='index.html']").parent().addClass("disabled");
+const currentPath = window.location.pathname.replace(/\.html$/, "").replace(/\/index$/, "/").replace(/(.)\/$/, "$1");
+nav.find(`a[href='${currentPath}']`).parent().addClass("disabled");
 
 document.documentElement.style.setProperty('--header-height', $('#header').innerHeight() + 'px');
 
@@ -35,7 +31,7 @@ function initialiseDesktop() {
     menu.hide();
     close.hide();
 
-    if (systemPreference) appearance.load("resources/icons/appearance.svg"); else appearance.load("resources/icons/appearance-alt.svg");
+    if (systemPreference) appearance.load("/resources/icons/appearance.svg"); else appearance.load("/resources/icons/appearance-alt.svg");
     if (userPreference != null && userPreference != systemPreference) displayAppearance();
 
     appearance.click(toggleAppearance);
@@ -58,7 +54,7 @@ function displayAppearance() {
     if (parseInt(userPreference)) currentPreference = true; else currentPreference = false;
     if (currentPreference) body.addClass("light-mode"), body.removeClass("dark-mode"); else body.addClass("dark-mode"), body.removeClass("light-mode");
 
-    const icon = currentPreference ? "resources/icons/appearance.svg" : "resources/icons/appearance-alt.svg";
+    const icon = currentPreference ? "/resources/icons/appearance.svg" : "/resources/icons/appearance-alt.svg";
     appearance.load(icon);
 }
 

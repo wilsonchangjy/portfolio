@@ -3,11 +3,12 @@
 // to IMAGES below. Its destination/title are derived from the
 // matching prefix here. To omit an image, simply leave it out of IMAGES.
 const PROJECTS = [
-    { prefix: "okxgrowth",          url: "okx-growth.html",           title: "OKX Growth Suite"},
-    { prefix: "mockupstudio",       url: "mockup-studio.html",        title: "Mockup Studio"},
-    { prefix: "nostaigia",          url: "nostaigia.html",            title: "Liminal Landscapes: nostAIgia"},
-    { prefix: "tairot",             url: "tairot.html",               title: "tAIrot"},
-    { prefix: "hostilearchitecture", url: "hostile-architecture.html", title: "The Average Singaporean's Guide to Hostile Architecture"},
+    { prefix: "okxgrowth",          url: "/work/okx-growth",            title: "OKX Growth Suite"},
+    { prefix: "mockupstudio",       url: "/work/mockup-studio",         title: "Mockup Studio"},
+    { prefix: "nostaigia",          url: "/work/nostaigia",             title: "Liminal Landscapes: nostAIgia"},
+    { prefix: "tairot",             url: "/work/tairot",                title: "tAIrot"},
+    { prefix: "hostilearchitecture", url: "/work/hostile-architecture",  title: "The Average Singaporean's Guide to Hostile Architecture"},
+    { prefix: "pricewise",          url: "/work/pricewise",             title: "Pricewise"},
 ];
 
 // Work images only (stickers, placeholder, preview and profile omitted).
@@ -18,6 +19,7 @@ const IMAGES = [
     "tairot.jpg", "tairot2.jpg", "tairot3.png",
     "hostilearchitecture.jpg", "hostilearchitecture2.jpg", "hostilearchitecture3.jpg", "hostilearchitecture4.jpg", "hostilearchitecture5.jpg",
     "hostilearchitecture-conceptual.jpg", "hostilearchitecture-conceptual2.jpg", "hostilearchitecture-conceptual3.jpg", "hostilearchitecture-conceptual4.jpg", "hostilearchitecture-research.jpg",
+    "pricewise.jpg",
 ];
 
 // Tunables
@@ -53,6 +55,7 @@ const ASPECTS = {
     "hostilearchitecture-conceptual.jpg": 1.5, "hostilearchitecture-conceptual2.jpg": 1.5,
     "hostilearchitecture-conceptual3.jpg": 1.5, "hostilearchitecture-conceptual4.jpg": 1.5,
     "hostilearchitecture-research.jpg": 1.778,
+    "pricewise.jpg": 1.778,
 };
 
 // Functions
@@ -115,7 +118,7 @@ function buildBlock() {
             tile.draggable = false;
             tile.style.width = `${h * aspectOf(f)}px`; // image renders at height h
             tile.innerHTML =
-                `<img src="resources/images/${f}" alt="${project.title}" style="aspect-ratio: ${aspectOf(f)}" draggable="false" decoding="async" onload="this.classList.add('loaded')">` +
+                `<img src="/resources/images/${f}" alt="${project.title}" style="aspect-ratio: ${aspectOf(f)}" draggable="false" decoding="async" onload="this.classList.add('loaded')">` +
                 `<p class="caption primary">${project.title}</p>`;
             rowEl.appendChild(tile);
         });

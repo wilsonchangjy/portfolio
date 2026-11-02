@@ -193,6 +193,10 @@
 
 /* Phones */
 @media screen and (max-width: 767px) {
+    html {
+        --header-height: 56px;
+    }
+
     body {
         font-size: 14px;
     }
@@ -231,6 +235,7 @@
 
     #header {
         padding: 16px;
+        min-height: 24px;
 
         .grid {
             display: flex;

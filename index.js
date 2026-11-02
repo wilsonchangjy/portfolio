@@ -40,8 +40,8 @@ function advanceLanding() {
 function setLandingClip(video, clip) {
     if (video.dataset.clip === clip) return;
     video.dataset.clip = clip;
-    video.poster = `resources/images/${clip.image}.jpg`;
-    video.src = `resources/videos/${clip.video}.mp4`;
+    video.poster = `/resources/images/${clip.image}.jpg`;
+    video.src = `/resources/videos/${clip.video}.mp4`;
 }
 
 function shuffleArray(array) {

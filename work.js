@@ -45,7 +45,7 @@ function initialiseWorkClips() {
 function playWorkClip(card) {
     const video = card.querySelector("video");
     if (!video) return;
-    if (!video.src) video.src = `resources/videos/${card.dataset.video}.mp4`;
+    if (!video.src) video.src = `/resources/videos/${card.dataset.video}.mp4`;
 
     video.play().then(() => { if (!video.paused) video.classList.add("active"); }).catch(() => {});
 }
